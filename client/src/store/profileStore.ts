@@ -1,4 +1,4 @@
-import { User } from "@/lib/types";
+import { themeType, User } from "@/lib/types";
 import { create } from "zustand";
 
 interface ProfileState {
@@ -6,6 +6,7 @@ interface ProfileState {
   setProfile: (profile: User) => void;
   updateProfile: (updatedProfile: User) => void;
   removeProfile: () => void;
+  setTheme: (theme: themeType) => void;
 }
 
 const useProfileStore = create<ProfileState>((set) => ({
@@ -15,6 +16,7 @@ const useProfileStore = create<ProfileState>((set) => ({
     email: "",
     fullName: "",
     avatar: "",
+    theme: "light",
     createdAt: "",
     updatedAt: "",
     _v: 0,
@@ -31,12 +33,17 @@ const useProfileStore = create<ProfileState>((set) => ({
         username: "",
         email: "",
         fullName: "",
+        theme: "light",
         avatar: "",
         createdAt: "",
         updatedAt: "",
         _v: 0,
       },
     }),
+  setTheme: (theme) =>
+    set((state) => ({
+      profile: { ...state.profile, theme },
+    })),
 }));
 
 export default useProfileStore;
