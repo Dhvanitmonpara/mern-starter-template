@@ -1,4 +1,4 @@
-const DB_NAME = "stock-prediction"
+const DB_NAME = "db-name"
 
 const appName = 'AppName'
 
