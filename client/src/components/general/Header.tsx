@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import appName from "@/constants/appName";
 import ProfileCard from "./ProfileCard";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
 
@@ -55,6 +56,7 @@ const Header = () => {
           >
             Dashboard
           </NavLink>
+          <ThemeToggle />
           <div className="hidden lg:inline-block">
             <ProfileCard />
           </div>
